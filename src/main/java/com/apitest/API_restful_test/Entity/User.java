@@ -1,5 +1,7 @@
 package com.apitest.API_restful_test.Entity;
 
+import jakarta.validation.constraints.Email;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,13 +17,14 @@ public class User {
     private String name;
 
     @Column(nullable = false, unique = true)
+    @Email(regexp = "${validation.email.pattern}", message = "El correo electrónico no es válido")
     private String email;
 
     @Column(nullable = false)
     private String password;
 
-//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-//    private List<PhoneNumber> phoneNumbers = new ArrayList<>();
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<PhoneNumber> phoneNumbers = new ArrayList<>();
 
     // Constructor, getters, setters y otros métodos (omito para brevedad)
 
@@ -33,15 +36,13 @@ public class User {
         this.email = email;
         this.password = password;
     }
-
-/*    public void addPhoneNumber(PhoneNumber phoneNumber) {
+    public void addPhoneNumber(PhoneNumber phoneNumber) {
         phoneNumbers.add(phoneNumber);
     }
 
     public void removePhoneNumber(PhoneNumber phoneNumber) {
         phoneNumbers.remove(phoneNumber);
     }
-*/
     public String getName() {
         return name;
     }

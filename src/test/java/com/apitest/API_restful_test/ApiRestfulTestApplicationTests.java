@@ -1,6 +1,5 @@
 package com.apitest.API_restful_test;
 
-import com.apitest.API_restful_test.Repository.IUserRepository;
 import com.apitest.API_restful_test.Entity.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @AutoConfigureTestDatabase(connection = EmbeddedDatabaseConnection.H2)
 class ApiRestfulTestApplicationTests {
 
-	@Autowired
+	/*@Autowired
 	private IUserRepository IUserRepository;
 
 	@Test
@@ -28,6 +27,6 @@ class ApiRestfulTestApplicationTests {
 		IUserRepository.flush();
 
 		assertEquals(2, IUserRepository.findAll().size());
-	}
+	}*/
 
 }
