@@ -1,4 +1,4 @@
-package com.apitest.API_restful_test.entity;
+package com.apitest.API_restful_test.Entity;
 
 import javax.persistence.*;
 

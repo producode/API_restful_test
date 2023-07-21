@@ -1,7 +1,7 @@
 package com.apitest.API_restful_test.Controller;
 
 import com.apitest.API_restful_test.Service.UserService;
-import com.apitest.API_restful_test.entity.User;
+import com.apitest.API_restful_test.Entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +17,7 @@ public class UserController {
 
     @PostMapping
     public User createUser(@RequestBody User user){
-        return user;
+        return userService.saveUser(user);
     }
 
     @GetMapping

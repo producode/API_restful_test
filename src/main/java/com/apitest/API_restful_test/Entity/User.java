@@ -1,4 +1,4 @@
-package com.apitest.API_restful_test.entity;
+package com.apitest.API_restful_test.Entity;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -20,18 +20,28 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<PhoneNumber> phoneNumbers = new ArrayList<>();
+//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+//    private List<PhoneNumber> phoneNumbers = new ArrayList<>();
 
     // Constructor, getters, setters y otros métodos (omito para brevedad)
 
     public User() {
     }
 
-    public void addPhoneNumber(PhoneNumber phoneNumber) {
+    public User(String name, String email, String password) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+    }
+
+/*    public void addPhoneNumber(PhoneNumber phoneNumber) {
         phoneNumbers.add(phoneNumber);
     }
 
+    public void removePhoneNumber(PhoneNumber phoneNumber) {
+        phoneNumbers.remove(phoneNumber);
+    }
+*/
     public String getName() {
         return name;
     }
@@ -54,9 +64,5 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public void removePhoneNumber(PhoneNumber phoneNumber) {
-        phoneNumbers.remove(phoneNumber);
     }
 }
