@@ -1,0 +1,56 @@
+{
+	"info": {
+		"_postman_id": "4629dcf7-bb3e-499f-b69f-3f578a4e8e4e",
+		"name": "API Restful test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"John Doe\",\r\n    \"email\": \"john.doe@example.com\",\r\n    \"password\": \"My@password23\",\r\n    \"phones\": [\r\n        {\r\n            \"number\": \"123456789\",\r\n            \"cityCode\": \"123\",\r\n            \"countryCode\": \"1\"\r\n        },\r\n        {\r\n            \"number\": \"987654321\",\r\n            \"cityCode\": \"456\",\r\n            \"countryCode\": \"1\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
