@@ -10,9 +10,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 
 @SpringBootApplication
-@EnableJpaRepositories("com.apitest_API_restful_test.")
-@ComponentScan(basePackages = { "com.apitest_API_restful_test." })
-@EntityScan("com.apitest_API_restful_test.*")
+@EnableJpaRepositories("com.apitest.API_restful_test.*")
+@ComponentScan(basePackages = { "com.apitest.API_restful_test.*" })
+@EntityScan("com.apitest.API_restful_test.entity")
 public class ApiRestfulTestApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
